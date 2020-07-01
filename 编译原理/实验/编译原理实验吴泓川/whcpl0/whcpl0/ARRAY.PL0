@@ -1,0 +1,19 @@
+const i=5,n=10;
+var j,a[i],c[n],b;
+begin
+ for j:=0 to i-1
+ do
+  begin
+   a[j]:=j;
+  end;
+
+ read(a[2],a[3]);
+
+ for j:=0 to i-1
+ do write(a[j]);
+
+ b:=a[2]--*++a[3]-i;
+
+ write(a[2],a[3]);
+ write(b);
+end.
