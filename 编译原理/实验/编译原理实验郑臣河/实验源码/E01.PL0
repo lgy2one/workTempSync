@@ -1,0 +1,8 @@
+PROGRAM EX01;
+VAR A,B,C;
+BEGIN
+  A:=0;
+  READ(B);
+  C:=1;
+  IF B!=0 THEN WRITE(C) ELSE WRITE(A);
+END.

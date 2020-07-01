@@ -1,0 +1,5 @@
+var a;
+begin
+ for a:=1 to 8 do
+ write(a);
+end. 

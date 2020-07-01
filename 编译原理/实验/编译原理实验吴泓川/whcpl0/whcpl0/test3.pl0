@@ -1,0 +1,15 @@
+var a,b,i;
+begin
+a:=1;
+b:=9;
+for i:=1 to b do
+begin
+	a+=1;
+	write(i);
+end;
+write(a);
+a++;
+write(a);
+b := ++a * ++a;
+write(b);
+end.

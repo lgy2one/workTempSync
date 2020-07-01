@@ -1,0 +1,11 @@
+var a;
+begin
+	if a<>1 then
+		a:=2;
+	else
+		a:=3;
+	write(a);
+	++;
+	--;
+	
+end.

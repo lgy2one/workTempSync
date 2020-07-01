@@ -1,0 +1,23 @@
+Input pl/0 file?   y
+0 var a,b;
+
+1 begin
+
+2    a:=3;
+
+4    b:=2;
+
+6    a++;
+
+10    b--;
+
+14    a+=1;
+
+18    b-=1;
+
+22    write(a);
+
+25    write(b);
+
+28 end.
+
