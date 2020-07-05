@@ -680,8 +680,6 @@ priority_queue<int,vector<int>,less<int> > big_heap2;  //默认大顶堆
 priority_queue<int,vector<int>,greater<int> > small_heap; 
 ```
 
-![1585739999160](C:\Users\user\AppData\Local\Temp\1585739999160.png)
-
 ##### set
 
 ​        set是STL的一个关联容器，可快速查值，它底层使用平衡的搜索树——红黑树实现，插入删除操作时仅仅需要指针操作节点即可完成，不涉及到内存移动和拷贝，所以效率比较高。multiset与set一样，不过可以允许重复值。
