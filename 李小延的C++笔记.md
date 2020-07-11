@@ -2577,6 +2577,14 @@ IO分两阶段（一旦拿到数据后就变成了数据操作，不再是IO）�
 
 ## 常用框架
 
+### log4cplus
+
+​		log4cplus是一种易于使用的C ++ 日志记录API，可提供线程安全，灵活且任意粒度的日志管理和配置控制。
+
+#### 使用方法
+
+
+
 ## Linux命令
 
 ### 文件操作
@@ -2601,7 +2609,7 @@ tar [ 必要参数 ] [ 选择参数 ] [ 文件 ]
 
 用来压缩和解压文件。tar本身不具有压缩功能。他是调用压缩功能实现的 
 
-#### 命令参数：
+#### 命令参数
 
 **必要参数有如下：**
 
@@ -2859,10 +2867,10 @@ Proactor：异步接收和同时处理多个服务请求的事件驱动程序；
 
 **gdb:**
 
-1. 接coredump，可以用where或者bt命令查看core文件，不过前提是系统开了core选项
+1. 可以用where或者bt命令查看core文件，不过前提是系统开了core选项
 2. 可以根据命令执行断点调试，找出错误的地方
 3. 段错误出现原因及解决方法：[详情点击此处](https://www.cnblogs.com/panfeng412/archive/2011/11/06/segmentation-fault-in-linux.html)
-4. [gdb详细使用方法][https://www.cnblogs.com/arnoldlu/p/9633254.html]
+4. [gdb详细使用方法](https://www.cnblogs.com/arnoldlu/p/9633254.html)
 
 ### valgrind
 
@@ -2896,3 +2904,5 @@ Proactor：异步接收和同时处理多个服务请求的事件驱动程序；
 #### 自己的缺点是什么，举个例子
 
 可能工作或者学习的时候比较投入，忽略了身边同学的感受
+
+[https://www.cnblogs.com/arnoldlu/p/9633254.html]: 
