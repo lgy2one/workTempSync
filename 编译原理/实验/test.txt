@@ -1,7 +1,0 @@
-var a,b;
- begin
-  a:=2;
-  b:=3;
-  if a#b then
-    write(a);
-end.

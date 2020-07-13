@@ -1,6 +1,0 @@
-PROGRAM EX01;
-VAR A;
-BEGIN
-  A:=18;
-   IF A<>16 THEN WRITE(A);
-END.

@@ -1,9 +1,0 @@
-PROGRAM NEQL;
-
-VAR A,B,C,D;
-  BEGIN
-  READ(A);
-  B:=0;
-  IF A<>0 THEN B:=1 ELSE B:=2;
-  WRITE(B);
-END.
