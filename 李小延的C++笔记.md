@@ -894,7 +894,40 @@ int accept(int s,struct sockaddr * addr,int * addrlen)
 
 ![1585888152367](assets/1585888152367.png)
 
+##### recv
 
+```C++
+//原型
+ssize_t recv(int sockfd, void *buf, size_t len, int flags);
+```
+
+该函数第一个参数指定接收端套接字描述符;
+
+第二个参数指明一个缓冲区，该缓冲区用来存放recv函数接收到的数据;
+
+第三个参数指明缓冲区buf的长度;
+
+第四个参数一般置0; （标志位）
+
+**tips:** recv函数返回其实际copy的字节数（第四个参数为0的时候， 其实是剪切数据， 而不是copy数据）。如果recv在copy时出错，那么它返回SOCKET_ERROR; 如果recv函数在等待协议接收数据时网络中断了，那么它返回0(比如对端close socket);recv函数仅仅是copy数据， 真正的接收数据是协议来完成的（发送数据要靠协议栈）。
+
+**返回说明：**
+a. 成功执行时，返回接收到的字节数。另一端已关闭则返回0。
+
+b. 失败返回-1，errno被设为以下的某个值
+EAGAIN：套接字已标记为非阻塞，而接收操作被阻塞或者接收超时
+EBADF：sock不是有效的描述词
+ECONNREFUSE：远程主机阻绝网络连接
+EFAULT：内存空间访问出错
+EINTR：操作被信号中断
+EINVAL：参数无效
+ENOMEM：内存不足
+ENOTCONN：与面向连接关联的套接字尚未被连接上
+ENOTSOCK：sock索引的不是套接字
+
+c. 当返回值是0时，为正常关闭连接；
+
+##### 格式转换
 
 - int **inet_aton**(const char *strptr,struct in_addr *addrptr)
 
@@ -2622,6 +2655,27 @@ IO分两阶段（一旦拿到数据后就变成了数据操作，不再是IO）�
 复制整个文件夹： cp -r 路径1  路径2
 
 删除整个文件夹且不递归： rm -rf  路径
+
+### 网络相关
+
+查看ip地址：ifconfig
+
+#### 防火墙/centos7
+
+开启端口8080
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+
+查询端口号8080 是否开启：
+
+firewall-cmd --query-port=8080/tcp
+
+重启防火墙：
+
+firewall-cmd --reload
+
+查询有哪些端口是开启的:
+
+firewall-cmd --list-port
 
 ### tar压缩命令
 
