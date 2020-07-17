@@ -1,0 +1,56 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    # MySQL 配置
+    url: jdbc:mysql://39.98.41.126:3306/exclusive_plug?characterEncoding=utf8&useSSL=true&serverTimezone=UTC&verifyServerCertificate=false
+    username: root
+    password: 3751ueoxjwgixjw3913
+    driver-class-name: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 100
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  # Redis 配置
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 300
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000
+
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:11111
+    ## application实例名
+  application:
+    name: spring-boot-admin-client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+

@@ -1,0 +1,43 @@
+2018-10-01 16:02:37.540  INFO 5456 --- [main] c.q.e.ExclusivePlugApplication           : Starting ExclusivePlugApplication on 4TCH0BJPQIJZO26 with PID 5456 (E:\workspace_java\exclusive-plug\target\classes started by Wilder in E:\workspace_java\exclusive-plug)
+2018-10-01 16:02:37.551  INFO 5456 --- [main] c.q.e.ExclusivePlugApplication           : No active profile set, falling back to default profiles: default
+2018-10-01 16:02:37.866  INFO 5456 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4562e04d: startup date [Mon Oct 01 16:02:37 CST 2018]; root of context hierarchy
+2018-10-01 16:02:41.019  INFO 5456 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-10-01 16:02:43.096  INFO 5456 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'jedisRedisConfig' of type [com.qg.exclusiveplug.config.JedisRedisConfig$$EnhancerBySpringCGLIB$$66b60bd4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-01 16:02:43.123  INFO 5456 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$71c7a0a6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-01 16:02:43.555  INFO 5456 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'jedisConnectionFactory' of type [org.springframework.data.redis.connection.jedis.JedisConnectionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-01 16:02:43.589  INFO 5456 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'redisConfig' of type [com.qg.exclusiveplug.config.RedisConfig$$EnhancerBySpringCGLIB$$ec1aa489] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-01 16:02:43.722  INFO 5456 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'cacheManager' of type [org.springframework.data.redis.cache.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-01 16:02:45.277  INFO 5456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-10-01 16:02:45.381  INFO 5456 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-01 16:02:45.382  INFO 5456 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.34
+2018-10-01 16:02:45.401  INFO 5456 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.17] using APR version [1.6.3].
+2018-10-01 16:02:45.402  INFO 5456 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2018-10-01 16:02:45.403  INFO 5456 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2018-10-01 16:02:46.514  INFO 5456 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2o  27 Mar 2018]
+2018-10-01 16:02:46.879  INFO 5456 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-10-01 16:02:46.880  INFO 5456 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 9014 ms
+2018-10-01 16:02:47.208  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-10-01 16:02:47.212  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-10-01 16:02:47.224  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-10-01 16:02:47.225  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-10-01 16:02:47.226  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-10-01 16:02:47.228  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-10-01 16:02:47.241  INFO 5456 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-10-01 16:02:48.055  INFO 5456 --- [main] com.qg.exclusiveplug.config.TcpServer    : TCP 连接开启，端口号为: 0.0.0.0/0.0.0.0:8090 ... 
+2018-10-01 16:02:49.437  WARN 5456 --- [main] io.netty.bootstrap.ServerBootstrap       : Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x9aa83a9d]'
+2018-10-01 16:02:50.831  INFO 5456 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped URL path [/ws] onto handler of type [class org.springframework.web.socket.server.support.WebSocketHttpRequestHandler]
+2018-10-01 16:02:50.832  INFO 5456 --- [main] o.s.w.s.s.s.WebSocketHandlerMapping      : Mapped URL path [/sockjs/message/**] onto handler of type [class org.springframework.web.socket.sockjs.support.SockJsHttpRequestHandler]
+2018-10-01 16:02:50.877  INFO 5456 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService  'defaultSockJsTaskScheduler'
+2018-10-01 16:02:51.201  INFO 5456 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-01 16:02:52.070  INFO 5456 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@4562e04d: startup date [Mon Oct 01 16:02:37 CST 2018]; root of context hierarchy
+2018-10-01 16:02:52.279  INFO 5456 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello]}" onto public java.lang.String com.qg.exclusiveplug.web.TestController.hello()
+2018-10-01 16:02:52.300  INFO 5456 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-10-01 16:02:52.303  INFO 5456 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-10-01 16:02:52.467  INFO 5456 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-01 16:02:52.468  INFO 5456 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-10-01 16:02:54.230  INFO 5456 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-10-01 16:02:54.236  INFO 5456 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-10-01 16:02:54.251  INFO 5456 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2018-10-01 16:02:54.270  INFO 5456 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 2147483647
+2018-10-01 16:02:54.354  INFO 5456 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-10-01 16:02:54.364  INFO 5456 --- [main] c.q.e.ExclusivePlugApplication           : Started ExclusivePlugApplication in 18.642 seconds (JVM running for 21.981)

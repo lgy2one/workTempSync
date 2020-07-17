@@ -1,0 +1,46 @@
+# For a quick start check out our HTTP Requests collection (Tools|HTTP Client|Open HTTP Requests Collection).
+##
+## Following HTTP Request Live Templates are available:
+## * 'gtrp' and 'gtr' create a GET request with or without query parameters;
+## * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
+## * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+###
+POST https://localhost:11111/user/loginnormal
+Content-Type: application/json
+
+{
+  "user":{
+    "userPhone":"13570200438",
+    "userPassword":"11111111"
+  }
+}
+###
+
+###
+POST https://localhost:11111/actiondevice/timing
+x-auth-token: 0b3a8c67-3e69-4348-8e0d-a26ff39ee030
+Content-Type: application/json
+
+{
+  "index":4,
+  "key":0,
+  "time":"2019-11-04 09:55:00"
+}
+
+###
+GET https://localhost:11111/actiondevice/listtiming
+x-auth-token: 0b3a8c67-3e69-4348-8e0d-a26ff39ee030
+
+###
+POST http://localhost:11111/actiondevice/deltiming
+x-auth-token: c9c088ec-fcbd-46e6-b857-621995a3fb4e
+Content-Type: application/json
+
+{
+  "timing":{
+    "id":98
+  }
+}
+
+###
