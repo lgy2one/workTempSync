@@ -2648,13 +2648,15 @@ IO分两阶段（一旦拿到数据后就变成了数据操作，不再是IO）�
 
 返回上一级目录： cd ..
 
-进入某个目录： cd 目录名
+进入某个目录： cd path
 
-在任意目录访问绝对路径：cd /目录名1/目录名2
+在任意目录访问绝对路径：cd /path1/path2
 
-复制整个文件夹： cp -r 路径1  路径2
+复制整个文件夹： cp -r path1 path2
 
-删除整个文件夹且不递归： rm -rf  路径
+删除整个文件夹且不递归： rm -rf  path
+
+移动文件：mv file path
 
 ### 网络相关
 
@@ -2663,6 +2665,7 @@ IO分两阶段（一旦拿到数据后就变成了数据操作，不再是IO）�
 #### 防火墙/centos7
 
 开启端口8080
+
 firewall-cmd --zone=public --add-port=8080/tcp --permanent
 
 查询端口号8080 是否开启：
@@ -2676,6 +2679,10 @@ firewall-cmd --reload
 查询有哪些端口是开启的:
 
 firewall-cmd --list-port
+
+### 其他
+
+从网上下载连接：
 
 ### tar压缩命令
 
