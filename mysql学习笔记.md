@@ -1,6 +1,6 @@
 ## mysql命令
 
-### select
+### SELECT
 
 - 选择一个列	
 
@@ -31,4 +31,35 @@
   SELECT columnName FROM tableName LIMIT 5, 5;
   ```
 
-  
+- SELECT的排序
+
+```mysql
+#可以任意选择列和需要排序的列，默认是升序(ASC)
+SELECT columnName1, columnName2, columnName3 
+FROM tableName 
+ORDER BY columnName2, columnName3;  
+
+#降序需要加上DESC关键字
+SELECT columnName1, columnName2, columnName3 
+FROM tableName 
+ORDER BY columnName2 DESC, columnName3;
+```
+
+### WHERE
+
+- 根据特定条件筛选
+
+```mysql
+#同时使用 ORDER BY 和 WHERE 子句时，应该让 ORDER BY 在 WHERE 后面
+SELECT columnName1, columnName2 
+FROM tableName
+WHERE columnName1 <= 1;
+
+#使用BETWEEN
+SELECT columnName1, columnName2 
+FROM tableName
+WHERE columnName1 BETWEEN 5 AND 10;
+
+#除了AND以外，还有许多操作符如OR、IN、NOT
+```
+

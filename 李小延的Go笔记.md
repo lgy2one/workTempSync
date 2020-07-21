@@ -81,3 +81,10 @@ log 包中提供了三类日志输出接口，Print、Fatal 和 Panic。
 - Print 是普通输出；
 - Fatal 是在执行完 Print 后，执行 os.Exit(1)；
 - Panic 是在执行完 Print 后调用 panic() 方法。
+
+
+
+### 接口interface
+
+- 接口是方法的集合，是go语言多态的体现
+- interface{}代表类型是空接口，通过空接口类型，Go也能像其它动态语言一样，在数据结构中存储任意类型的数据
