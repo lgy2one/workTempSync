@@ -88,3 +88,34 @@ log 包中提供了三类日志输出接口，Print、Fatal 和 Panic。
 
 - 接口是方法的集合，是go语言多态的体现
 - interface{}代表类型是空接口，通过空接口类型，Go也能像其它动态语言一样，在数据结构中存储任意类型的数据
+
+### 关键字
+
+#### defer
+
+​		defer后面接**函数调用语句**，被defer的函数在defer所在的函数结束之后被调用，起到了一个延迟调用的效果。
+
+```go
+package main
+import (    
+    "fmt"
+)
+
+func main() {    
+    fmt.Println("defer begin")    // 将defer放入延迟调用栈    
+    defer fmt.Println(1)    
+    defer fmt.Println(2)    
+      
+    defer fmt.Println(3)    // 最后一个放入, 位于栈顶, 最先调用  
+    fmt.Println("defer end")
+}
+/*
+输出结果如下：
+defer begin
+defer end
+3
+2
+1
+*/
+```
+

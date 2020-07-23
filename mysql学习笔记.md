@@ -100,3 +100,5 @@ WHERE columnName1 REGEXP '[^123] ton'
 ![image-20200722204341079](assets/image-20200722204341079.png)
 
 ![image-20200722204400781](assets/image-20200722204400781.png)
+
+### 
