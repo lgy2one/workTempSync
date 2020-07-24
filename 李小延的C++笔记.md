@@ -941,7 +941,71 @@ c. 当返回值是0时，为正常关闭连接；
 
     将一个32位的网络字节序二进制IPv4地址转换成相应的点分十进制数串,由该函数的返回值所指向的字符串驻留在静态内存中,这意味着该函数是不可重入的
 
-#### 进程编程
+#### 多线程编程
+
+##### pthread_create()
+
+函数 pthread_create() 用来创建一个线程，它的原型为：
+
+```C++
+　　extern int pthread_create (
+      pthread_t *pthread,
+      const pthread_attr_t *pAttr,
+      void *(*start_routine) (void *), 
+      void *arg);
+```
+
+　	参数一：线程id，创建线程时，为每一个线程分配一个Id。
+ 	   参数二：线程属性，后面详细介绍线程属性。
+ 	   参数三：线程函数，注意该函数返回值必须为void* 且参数同样也只能是void*。 
+ 	   参数四：传递给线程函数的参数。
+
+   	当创建线程成功时，函数返回0，若不为0则说明创建线程失败，常见的错误返回代码为EAGAIN和EINVAL。前者表示系统限制创建新的线程，例如线程数目过多了。后者表示第二个参数代表的线程属性值非法。创建线程成功后，新创建的线程则运行参数三和参数四确定的函数，原来的线程则继续运行下一行代码。
+
+```c++
+	pthread_t threadID;
+	//无函数参数时线程函数也需要加入(void *arg)参数
+ 	pthread_create(&threadID, NULL, threadFunc, NULL);
+
+	//传多个参数,用数组
+    int ival = 1;   
+    float fval = 10.08;   
+    char buf[] = "func";   
+    void* arg[3]={&ival, &fval, buf};   
+    pthread_create(&threadID, NULL, route, (void *)arg);   //此处void*可以不加
+```
+
+
+
+##### pthread_join()
+
+```C++
+int pthread_join (pthread_t tid, void  ** value_ptr);
+```
+
+函数说明：该函数功能有两个，一：等待指定的tid线程结束，将返回值存在value_ptr里
+              二：该函数会释放被等待线程所占用的资源。
+参数说明：参数一：等待线程的id
+
+​				   参数二：该线程结束时，的返回值
+
+   	需注意的是一个线程仅允许唯一的一个线程使用pthread_join()等待它的终止，否则后面调用的pthread_join会返回错误；并且被等待的线程应该处于join（结合）状态，即非DETACHED（分离）状态，否则pthread_join会直接返回错误。如果某个线程调用pthread_detach(th)后，线程状态变成分离状态，用pthread_join()等待该线程结束，并释放资源就会返回一个错误。
+
+​		pthread_exit 结束线程并设置线程的返回值，用pthread_join来获取线程结束时的返回值。
+
+##### pthread_exit()
+
+```c++
+void pthread_exit (void *value_ptr);
+```
+
+　　函数说明：终止本线程（线程的退出可以是隐士退出也可以显示退出调用pthread_exit函数）
+		参数说明：如果该参数value_ptr不为NULL，那么，此线程调用pthread_exit函数终止时，线程退出返回的值为*value_ptr;
+
+​		linux主线程里使用pthread_exit(val)结束时，只会使主线程结束，而由主线程创建的子线程并不会因此结束，他们继续执行。主线程使用return结束时，那么子线程也就结束了。
+
+
+#### 多进程编程
 
 ##### [共享内存](https://www.169it.com/article/6012387511881523440.html)
 
@@ -998,13 +1062,13 @@ struct shmid_ds
 
 #### epoll函数
 
-##### epoll_create函数
+##### epoll_create
 
 函数声明：int epoll_create(int size)
 
 该函数生成一个epoll专用的文件描述符。它其实是在内核申请一空间，用来存放你想关注的socket fd上是否发生以及发生了什么事件。size就是你在这个epoll fd上能关注的最大socket fd数。随你定好了。只要你有空间。
 
-##### epoll_ctl函数
+##### epoll_ctl
 
 函数声明：int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event)
 
@@ -1054,7 +1118,7 @@ EPOLLERR：表示对应的文件描述符发生错误；
 EPOLLHUP：表示对应的文件描述符被挂断；
 EPOLLET：表示对应的文件描述符有事件发生；
 
-##### epoll_wait函数
+##### epoll_wait
 
 函数声明:int epoll_wait(int epfd,struct epoll_event * events,int maxevents,int timeout)
 

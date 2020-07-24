@@ -119,3 +119,4 @@ defer end
 */
 ```
 
+- `sync.WaitGroup`是一个结构体，传递的时候要传递指针
