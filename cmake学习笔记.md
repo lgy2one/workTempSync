@@ -6,7 +6,7 @@
 
 ## cmake编译过程
 
-CMakeLists.txt相当于定义了一套生成makefile的规则，通过cmake，生成对应的makefile，再使用make进行程序编译。
+​		CMakeLists.txt相当于定义了一套生成makefile的规则，通过cmake，生成对应的makefile，再使用make进行程序编译。
 
 ### 单一模块编译
 
@@ -14,7 +14,7 @@ CMakeLists.txt相当于定义了一套生成makefile的规则，通过cmake，�
 
 编译的时候，进入根目录，创建一个存放编译后文件的目录，假设目录叫build，那么，进入build目录，执行
 
-```
+```cmake
 #..表示cmakelist.txt文件在上一级目录
 cmake ..
 ```
@@ -137,41 +137,51 @@ add_library(libName ${DIR_LIB_SRCS})
 > ```cmake
 > #项目根目录
 > PROJECT_SOURCE_DIR
+> 
 > #运行cmake的目录，一般是${PROJECT_SOURCE_DIR}/build
 > PROJECT_BINARY_DIR
+> 
 > #当前处理的CMakeLists.txt所在的路径
 > CMAKE_CURRENT_SOURCE_DIR 
+> 
 > #项目名
 > PROJECT_NAME 
 > ```
 
-> 编译器相关
+
+
+> **编译器相关**
 >
 > ```cmake
 > #设置 C 编译选项,也可以通过指令 ADD_DEFINITIONS()添加
 > CMAKE_C_FLAGS
+> 
 > #设置 C++编译选项,也可以通过指令 ADD_DEFINITIONS()添加
 > CMAKE_CXX_FLAGS
 > ```
 >
-> 编译类型相关（主要讲库编译）
+> 
+>
+> **编译类型相关（主要讲库编译）**
 >
 > ```cmake
 > ADD_LIBRARY(libname [SHARED | STATIC | MODULE] [EXCLUDE_FROM_ALL] SRC_LIST)
->         #生成动态库或静态库
->         #SHARED 动态库
->         #STATIC 静态库
->         #MODULE 在使用dyld的系统有效,若不支持dyld,等同于SHARED
->         #EXCLUDE_FROM_ALL 表示该库不会被默认构建
->  
->  #添加共享库搜索路径
->  LINK_DIRECTORIES 
->  #添加共享库链接
->  TARGET_LINK_LIBRARIES
->  # TARGET_LINK_LIBRARIES(target lib1 lib2 …)
+>      #生成动态库或静态库
+>      #SHARED 动态库
+>      #STATIC 静态库
+>      #MODULE 在使用dyld的系统有效,若不支持dyld,等同于SHARED
+>      #EXCLUDE_FROM_ALL 表示该库不会被默认构建
+> 
+> #添加共享库搜索路径
+> LINK_DIRECTORIES 
+> #添加共享库链接
+> TARGET_LINK_LIBRARIES
+> # TARGET_LINK_LIBRARIES(target lib1 lib2 …)
 > ```
 >
-> 子工程
+> 
+>
+> **子工程**
 >
 > ```cmake
 > ADD_SUBDIRECTORY(src_dir [binary_dir] [EXCLUDE_FROM_ALL])
@@ -179,7 +189,6 @@ add_library(libName ${DIR_LIB_SRCS})
 > #EXCLUDE_FROM_ALL含义：将这个目录从编译过程中排除
 > ```
 >
-> 
 
 
 
