@@ -89,7 +89,7 @@ add_executable(appName ${varName})
 ```cmake
 #GLOB <var> <dir>.h <dir>.cpp
 #实现查找这些文件并保存到变量SRC中
-FILE(GLOB SRC src/*.cpp src/*.h src/*/*.h src/*/*.cpp)
+FILE(GLOB SRC src/*.cpp src/*.h)
 add_executable(epollsvr ${SRC})
 ```
 
